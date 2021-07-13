@@ -1,14 +1,12 @@
 {
-  description = "A very basic flake";
-
   inputs.dwarffs.url = "github:edolstra/dwarffs";
-  inputs.blah.follows = "dwarffs/nixpkgs";
 
-  outputs = { self, nixpkgs }: {
+  inputs.nix.url = "github:NixOS/nix";
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+#  inputs.dwarffs.inputs.nix.follows = "nix";
+#  inputs.dwarffs.inputs.nixpkgs.follows = "nix/nixpkgs";
 
-    defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
+  outputs = { self, nixpkgs, dwarffs, nix }: {
 
   };
 }
