@@ -2,7 +2,7 @@
   description = "A very basic flake";
 
   inputs.dwarffs.url = "github:edolstra/dwarffs";
-  inputs.nixpkgs.follows = "dwarffs/nixpkgs";
+  inputs.blah.follows = "dwarffs/nixpkgs";
 
   outputs = { self, nixpkgs }: {
 
